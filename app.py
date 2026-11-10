@@ -20,7 +20,6 @@ def hello():
 
 @app.route("/health")
 def health():
-    """Vérifier la connexion à MongoDB et écrire/lire un doc test."""
     try:
         client.admin.command("ping")
         db.visits.insert_one({"source": "health"})

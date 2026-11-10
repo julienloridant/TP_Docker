@@ -179,3 +179,13 @@ Résultat :
 ```text
 mon_nginx
 ```
+
+
+
+## 5.Mise en place de l'application flask python 
+
+**Lancement de l'appli:**
+
+```bash
+Bon affichage de la page hello world python
+```

@@ -110,3 +110,82 @@ Deleted: sha256:c567b231f65614688711a75f31518a064258a51d442117a3e771a3a8fdba78ef
 ```
 
 L'image `hello-world` a été supprimée de la machine.
+
+
+
+
+## 4. Exercice : Création d'un serveur web avec Docker
+
+**1. Téléchargement de l'image officielle Nginx :**
+
+```bash
+docker pull nginx
+```
+
+Résultat :
+```text
+Using default tag: latest
+latest: Pulling from library/nginx
+6d2e43921e9e: Pull complete
+37fb86c2a767: Pull complete
+bbb080c71d50: Pull complete
+1962e1ff75b4: Pull complete
+512ac5e7ce8e: Pull complete
+1724c05f72c6: Pull complete
+7cb4701ce7cd: Pull complete
+4582dace95e2: Download complete
+d2c7e31f04a3: Download complete
+Digest: sha256:165ddde8751e75a1c907d24ef10d9f6deb08b57e0fe56caf67512486aff76d82
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+```
+
+**2. Lancement d'un conteneur Nginx en arrière-plan :**
+
+```bash
+docker run -d -p 8080:80 --name mon_nginx nginx
+```
+
+→ Démarrage d'un serveur web accessible sur http://localhost:8080.
+
+Résultat :
+```text
+3d3329f7512e87b12930b1f3e6b0a0a9e7444475198ced0c0679d47224886312
+```
+
+**3. Vérification de l'activité du conteneur :**
+
+```bash
+docker ps
+```
+
+Résultat :
+```text
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                     NAMES
+3d3329f7512e   nginx     "/docker-entrypoint.…"   5 seconds ago   Up 5 seconds   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   mon_nginx
+```
+
+**4. Accès à la page par défaut de Nginx depuis le navigateur :**
+
+Adresse : http://localhost:8080
+
+**5. Arrêt du conteneur :**
+
+```bash
+docker stop mon_nginx
+```
+
+Résultat :
+```text
+mon_nginx
+```
+
+
+
+## 5.Mise en place de l'application flask python 
+
+**Lancement de l'appli:**
+
+```bash
+Bon affichage de la page hello world python
+```
